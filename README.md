@@ -70,9 +70,6 @@ Filtering should be case-insensitive.
 
 If the list is empty after filtering, show: “No results found.”
 
-✨ Bonus:
-Highlight the matching part of the string in bold.
-
 ### 🧪 Challenge #3: Custom Modal with Outside Click Close
 
 📝 Prompt
