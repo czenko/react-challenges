@@ -20,7 +20,7 @@ Bonus:
 - Locks keyboard focus when open
   - Tab keyboard focus multiple times
   - See that focus stays on close button
-- Accessibility: buttons have appropriate aria-attributes
+- Accessibility: modal has appropriate aria-attributes
 */
 import { useState, useRef, useEffect, useCallback } from "react";
 
@@ -65,7 +65,7 @@ export default function CustomModal() {
       {expanded && (
         <div
           data-testid="screen"
-          className="overflow-hidden fixed inset-0 bg-gray-600/90 flex justify-center items-center"
+          className="fixed inset-0 bg-gray-600/90 flex justify-center items-center"
           onClick={(event) => {
             if (event.target !== modal.current) {
               setExpanded(false);
