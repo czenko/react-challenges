@@ -29,20 +29,17 @@ export default function CustomModal() {
   const modal = useRef<HTMLDivElement>(null);
   const closeButton = useRef<HTMLButtonElement>(null);
 
-  const handleKeyDown = useCallback(
-    (event: KeyboardEvent) => {
-      if (event.key === "Escape" && expanded) {
-        setExpanded(false);
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === "Escape" && expanded) {
+      setExpanded(false);
+    }
+    if (event.key === "Tab" && expanded) {
+      event.preventDefault();
+      if (closeButton.current) {
+        closeButton.current.focus();
       }
-      if (event.key === "Tab" && expanded) {
-        event.preventDefault();
-        if (closeButton.current) {
-          closeButton.current.focus();
-        }
-      }
-    },
-    [expanded]
-  );
+    }
+  };
 
   useEffect(() => {
     if (expanded) {
